@@ -3,10 +3,13 @@
 namespace App\Repositories;
 
 use App\Http\Resources\AbResource;
+use App\Http\Resources\AbResourceCollection;
+use App\Http\Resources\AbResources;
 use App\Models\Ab;
 use App\Models\Photo;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
 use Throwable;
 
@@ -17,11 +20,25 @@ class AbRepository implements AbRepositoryInterface
      *
      * @throws QueryException
      */
-    public function getAll(int $countUsers): AnonymousResourceCollection
+    public function getAll(int $countUsers, array $fields): LengthAwarePaginator
     {
-        return AbResource::collection(
-                Ab::query()->with('photos')->paginate($countUsers)
-        );
+        $query = Ab::query()->with('photos');
+        self::orderByField($query, $fields, 'sort_by_price');
+        self::orderByField($query, $fields, 'sort_by_created_at');
+
+        return $query->paginate($countUsers);
+    }
+
+    private function orderByField(&$query, array $fields, string $name): void
+    {
+        if (array_key_exists($name, $fields)) {
+            if ($fields[$name] == 'asc') {
+                $query = $query->orderBy('price');
+            }
+            if ($fields[$name] == 'desc') {
+                $query = $query->orderBy('price', 'desc');
+            }
+        }
     }
 
     /**
@@ -60,9 +77,9 @@ class AbRepository implements AbRepositoryInterface
      *
      * @throws QueryException
      */
-    public function findById(string $id): AbResource
+    public function findById(int $id, array $fields = null): Ab
     {
         /** @var Ab $stmt */
-        return AbResource::make(Ab::query()->with('photos')->find($id));
+        return Ab::query()->with('photos')->find($id);
     }
 }

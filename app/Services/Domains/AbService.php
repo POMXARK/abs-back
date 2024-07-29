@@ -1,8 +1,10 @@
 <?php
+declare(strict_types = 1);
 
 namespace App\Services\Domains;
 
 use App\Http\Resources\AbResource;
+use App\Http\Resources\AbResourceCollection;
 use App\Repositories\AbRepositoryInterface;
 use Exception;
 use Illuminate\Database\QueryException;
@@ -24,9 +26,9 @@ readonly class AbService
      *
      * @throws QueryException
      */
-    public function getAll(): AnonymousResourceCollection
+    public function getAll(array $fields): AbResourceCollection
     {
-        return $this->abRepository->getAll(self::COUNT_AB);
+        return AbResourceCollection::make($this->abRepository->getAll(self::COUNT_AB, $fields));
     }
 
     /**
@@ -42,8 +44,8 @@ readonly class AbService
     /**
      * Получить данные.
      */
-    public function findById(string $id): AbResource
+    public function findById(int $id, array $fields): AbResource
     {
-        return $this->abRepository->findById($id);
+        return AbResource::make($this->abRepository->findById($id), $fields);
     }
 }

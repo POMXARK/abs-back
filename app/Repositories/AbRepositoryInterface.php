@@ -2,9 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Http\Resources\AbResource;
+use App\Models\Ab;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 interface AbRepositoryInterface
 {
@@ -13,7 +14,7 @@ interface AbRepositoryInterface
      *
      * @throws QueryException
      */
-    public function getAll(int $countUsers): AnonymousResourceCollection;
+    public function getAll(int $countUsers, array $fields): LengthAwarePaginator;
 
     /**
      * Создание из массива.
@@ -27,5 +28,5 @@ interface AbRepositoryInterface
      *
      * @throws QueryException
      */
-    public function findById(string $id): AbResource;
+    public function findById(int $id, array $fields): Ab;
 }

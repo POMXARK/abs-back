@@ -40,7 +40,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vga1vPfZ3c8debED5ka466h'
+      - 'Bearer 5bg8hDaeZVkva16cdf3EP64'
     controller: null
     method: null
     route: null
@@ -70,7 +70,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: cumque
+        example: inventore
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -79,7 +79,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: okeefe.darrell@example.com
+        example: rabernathy@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: g=W4VMQmzq
+        example: 'y4![Im/BU*!0'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -103,9 +103,9 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: cumque
-      email: okeefe.darrell@example.com
-      password: g=W4VMQmzq
+      name: inventore
+      email: rabernathy@example.com
+      password: 'y4![Im/BU*!0'
       password_confirmation: null
     fileParameters: []
     responses: []
@@ -140,7 +140,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: noble.hayes@example.net
+        example: corrine.stokes@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -149,14 +149,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: "`ShmmJ8x4M('>W="
+        example: 'v#IhMq_Ax+t$NZ!,'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: noble.hayes@example.net
-      password: "`ShmmJ8x4M('>W="
+      email: corrine.stokes@example.net
+      password: 'v#IhMq_Ax+t$NZ!,'
     fileParameters: []
     responses: []
     responseFields: []
@@ -194,10 +194,60 @@ endpoints:
         enumValues: []
         exampleWasSpecified: false
         custom: []
+      sort_by_price:
+        name: sort_by_price
+        description: ''
+        required: false
+        example: desc
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      sort_by_created_at:
+        name: sort_by_created_at
+        description: ''
+        required: false
+        example: desc
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
     cleanQueryParameters:
       page: 1
-    bodyParameters: []
-    cleanBodyParameters: []
+      sort_by_price: desc
+      sort_by_created_at: desc
+    bodyParameters:
+      page:
+        name: page
+        description: ''
+        required: false
+        example: 14
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      sort_by_price:
+        name: sort_by_price
+        description: ''
+        required: false
+        example: at
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      sort_by_created_at:
+        name: sort_by_created_at
+        description: ''
+        required: false
+        example: laborum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      page: 14
+      sort_by_price: at
+      sort_by_created_at: laborum
     fileParameters: []
     responses:
       -
@@ -214,7 +264,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PZd6hg6bf1VEvck384eaaD5'
+      - 'Bearer Eh6ba1D43dcfP5e6kvga8VZ'
     controller: null
     method: null
     route: null
@@ -245,7 +295,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 200 characters.'
         required: true
-        example: naeejhuogumhosyalvr
+        example: ulfrcpozmkkbghs
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -254,7 +304,7 @@ endpoints:
         name: description
         description: 'Must not be greater than 1000 characters.'
         required: true
-        example: 'A perspiciatis numquam saepe.'
+        example: 'Esse veniam et occaecati mollitia architecto.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -264,23 +314,33 @@ endpoints:
         description: ''
         required: true
         example:
-          - nam
+          - ut
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
+      price:
+        name: price
+        description: ''
+        required: true
+        example: ducimus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
     cleanBodyParameters:
-      name: naeejhuogumhosyalvr
-      description: 'A perspiciatis numquam saepe.'
+      name: ulfrcpozmkkbghs
+      description: 'Esse veniam et occaecati mollitia architecto.'
       photos:
-        - nam
+        - ut
+      price: ducimus
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer bv5Vf6D4E8Z3dhkcaaeP16g'
+      - 'Bearer D4hg3Pc6a51aVbedf68EkvZ'
     controller: null
     method: null
     route: null
@@ -307,16 +367,37 @@ endpoints:
         name: id
         description: 'The ID of the ab.'
         required: true
-        example: 2
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 2
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
+      id: 1
+    queryParameters:
+      fields:
+        name: fields
+        description: ''
+        required: true
+        example:
+          - dolorum
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters:
+      fields:
+        - dolorum
+    bodyParameters:
+      fields:
+        name: fields
+        description: ''
+        required: false
+        example: null
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
@@ -334,7 +415,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 63dEhZ5bgDaVk64e8acPv1f'
+      - 'Bearer 3V66dZEef1b4D5Pcvakag8h'
     controller: null
     method: null
     route: null
@@ -362,13 +443,13 @@ endpoints:
         name: id
         description: 'The ID of the ab.'
         required: true
-        example: 2
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 2
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -379,7 +460,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d3DfVEega6ak6b581PvhZ4c'
+      - 'Bearer 8Vga561cPhbEZfvD4d36aek'
     controller: null
     method: null
     route: null
@@ -406,13 +487,13 @@ endpoints:
         name: id
         description: 'The ID of the ab.'
         required: true
-        example: 2
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 2
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -423,7 +504,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer heV41Zgba6f8Dk3c56aPEvd'
+      - 'Bearer vkPVf6cg8Dba1E5adZ36he4'
     controller: null
     method: null
     route: null

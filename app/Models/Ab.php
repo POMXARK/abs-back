@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $name
  * @property string $description
  * @property array $photos
+ * @property float $price
  */
 class Ab extends Model
 {

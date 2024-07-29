@@ -1,8 +1,11 @@
 <?php
+declare(strict_types = 1);
 
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\IndexAbRequest;
+use App\Http\Requests\ShowAbRequest;
 use App\Http\Requests\StoreAbRequest;
 use App\Http\Requests\UpdateAbRequest;
 use App\Models\Ab;
@@ -27,9 +30,11 @@ class AbController extends Controller
      * Получить все объявления постранично.
      */
     #[QueryParam("page", "int", required: false, example: 1)]
-    public function index()
+    #[QueryParam("sort_by_price", "string", required: false, example: 'desc')]
+    #[QueryParam("sort_by_created_at", "string", required: false, example: 'desc')]
+    public function index(IndexAbRequest $request)
     {
-        return response()->json(['abs' => $this->abService->getAll()], Response::HTTP_OK);
+        return response()->json(['abs' => $this->abService->getAll($request->validated())], Response::HTTP_OK);
     }
 
     /**
@@ -46,9 +51,10 @@ class AbController extends Controller
     /**
      * Получить объявление.
      */
-    public function show(Ab $ab)
+    #[QueryParam("fields", "string[]")]
+    public function show(Ab $ab, ShowAbRequest $request)
     {
-        return response()->json(['ab' => $this->abService->findById($ab->id)], Response::HTTP_OK);
+        return response()->json(['ab' => $this->abService->findById($ab->id, $request->validated())], Response::HTTP_OK);
     }
 
     /**

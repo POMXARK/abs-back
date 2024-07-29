@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace App\Http\Resources;
 
@@ -12,6 +13,11 @@ use Illuminate\Support\Collection;
  */
 class AbResource extends JsonResource
 {
+    public function __construct($resource, private $fields = [])
+    {
+        parent::__construct($resource);
+    }
+
     /**
      * Transform the resource into an array.
      *
@@ -20,12 +26,30 @@ class AbResource extends JsonResource
     public function toArray(Request $request): array
     {
         /** @var Ab $this */
-        return [
+        $data = [
             'abId' => $this->id,
             'name' => $this->name,
-            'description' => $this->description,
-            'photos' => self::getFormatPhotos($this->photos),
+            'price' => $this->price,
+            'photoLink' => $this->photos()->first(),
         ];
+
+        self::optionalFields($data);
+
+        return $data;
+    }
+
+    private function optionalFields(array &$data): void
+    {
+        if ($this->fields) {
+            if (in_array('description', $this->fields['fields'])) {
+                /** @var Ab $this */
+                $data['fields']['description']  = $this->description;
+            }
+
+            if (in_array('photos', $this->fields['fields'])) {
+                $data['fields']['photos']  = self::getFormatPhotos($this->photos);
+            }
+        }
     }
 
     private function getFormatPhotos(Collection $photos): array
@@ -33,8 +57,8 @@ class AbResource extends JsonResource
         $res = [];
         foreach ($photos as $photo) {
             $data = [];
-            $data['id'] = $photo['id'];
-            $data['link'] = $photo['link'];
+            $data['photoId'] = $photo['id'];
+            $data['photoLink'] = $photo['link'];
             $data['createdAt'] = $photo['created_at'];
             $res[] = $data;
         }

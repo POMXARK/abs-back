@@ -47,15 +47,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: cumque
+                  example: inventore
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: okeefe.darrell@example.com
+                  example: rabernathy@example.com
                 password:
                   type: string
                   description: ''
-                  example: g=W4VMQmzq
+                  example: 'y4![Im/BU*!0'
                 password_confirmation:
                   type: string
                   description: ''
@@ -85,11 +85,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: noble.hayes@example.net
+                  example: corrine.stokes@example.net
                 password:
                   type: string
                   description: ''
-                  example: "`ShmmJ8x4M('>W="
+                  example: 'v#IhMq_Ax+t$NZ!,'
               required:
                 - email
                 - password
@@ -110,6 +110,26 @@ paths:
             type: integer
             description: ''
             example: 1
+        -
+          in: query
+          name: sort_by_price
+          description: ''
+          example: desc
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: desc
+        -
+          in: query
+          name: sort_by_created_at
+          description: ''
+          example: desc
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: desc
       responses:
         401:
           description: ''
@@ -125,6 +145,25 @@ paths:
                     example: Unauthenticated.
       tags:
         - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: integer
+                  description: ''
+                  example: 14
+                sort_by_price:
+                  type: string
+                  description: ''
+                  example: at
+                sort_by_created_at:
+                  type: string
+                  description: ''
+                  example: laborum
     post:
       summary: 'Создать объявление.'
       operationId: ''
@@ -143,28 +182,47 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 200 characters.'
-                  example: naeejhuogumhosyalvr
+                  example: ulfrcpozmkkbghs
                 description:
                   type: string
                   description: 'Must not be greater than 1000 characters.'
-                  example: 'A perspiciatis numquam saepe.'
+                  example: 'Esse veniam et occaecati mollitia architecto.'
                 photos:
                   type: array
                   description: ''
                   example:
-                    - nam
+                    - ut
                   items:
                     type: string
+                price:
+                  type: string
+                  description: ''
+                  example: ducimus
               required:
                 - name
                 - description
                 - photos
+                - price
   '/api/v1/abs/{id}':
     get:
       summary: 'Получить объявление.'
       operationId: ''
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: query
+          name: fields
+          description: ''
+          example:
+            - dolorum
+          required: true
+          schema:
+            type: array
+            description: ''
+            example:
+              - dolorum
+            items:
+              type: string
       responses:
         401:
           description: ''
@@ -180,6 +238,18 @@ paths:
                     example: Unauthenticated.
       tags:
         - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fields:
+                  type: object
+                  description: ''
+                  example: null
+                  properties: {  }
     put:
       summary: 'Update the specified resource in storage.'
       operationId: updateTheSpecifiedResourceInStorage
@@ -201,7 +271,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the ab.'
-        example: 2
+        example: 1
         required: true
         schema:
           type: integer

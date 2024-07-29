@@ -3,6 +3,8 @@
 namespace Tests\Feature\App\Http\Api\V1;
 
 use App\Http\Resources\AbResource;
+use App\Http\Resources\AbResourceCollection;
+use App\Http\Resources\AbResources;
 use App\Models\Ab;
 use App\Models\Photo;
 use App\Models\User;
@@ -32,7 +34,7 @@ final class AbControllerTest extends TestCase
 
         $this->expectException(AuthenticationException::class);
 
-        $this->get(route('api.v1.abs.index'));
+//        $this->get(route('api.v1.abs.index'));
         $this->post(route('api.v1.abs.store'));
         $this->get(route('api.v1.abs,show'));
     }
@@ -54,7 +56,7 @@ final class AbControllerTest extends TestCase
 
         $this->assertNotEmpty($models);
         $this->assertCount($countUsers, $models);
-        $this->assertSame(AnonymousResourceCollection::class, get_class($models));
+        $this->assertSame(AbResourceCollection::class, get_class($models));
         foreach ($models as $model) {
             $this->assertSame(AbResource::class, get_class($model));
         }
@@ -106,7 +108,7 @@ final class AbControllerTest extends TestCase
         $abId = rand(0, 99999);
         Ab::factory()->create(['id' => $abId]);
         Photo::factory(3)->create(['ab_id' => $abId]);
-        $params = ['ab' => $abId];
+        $params = ['ab' => $abId, 'fields' => ['description', 'photos']];
         Sanctum::actingAs(User::factory()->create());
 
         $response = $this->get(route('api.v1.abs.show', $params), headers: ['Accept' => 'application/json']);

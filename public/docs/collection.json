@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "8fc3d450-fe7a-4705-b391-e42c4b32df31",
+        "_postman_id": "636e17b0-4289-400e-9606-e9deb81610ee",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -90,7 +90,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"cumque\",\"email\":\"okeefe.darrell@example.com\",\"password\":\"g=W4VMQmzq\",\"password_confirmation\":null}"
+                            "raw": "{\"name\":\"inventore\",\"email\":\"rabernathy@example.com\",\"password\":\"y4![Im\\\/BU*!0\",\"password_confirmation\":null}"
                         },
                         "description": "",
                         "auth": {
@@ -121,7 +121,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"noble.hayes@example.net\",\"password\":\"`ShmmJ8x4M('>W=\"}"
+                            "raw": "{\"email\":\"corrine.stokes@example.net\",\"password\":\"v#IhMq_Ax+t$NZ!,\"}"
                         },
                         "description": "",
                         "auth": {
@@ -142,9 +142,21 @@
                                     "value": "1",
                                     "description": "",
                                     "disabled": false
+                                },
+                                {
+                                    "key": "sort_by_price",
+                                    "value": "desc",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "sort_by_created_at",
+                                    "value": "desc",
+                                    "description": "",
+                                    "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/abs?page=1"
+                            "raw": "{{baseUrl}}\/api\/v1\/abs?page=1&sort_by_price=desc&sort_by_created_at=desc"
                         },
                         "method": "GET",
                         "header": [
@@ -157,7 +169,10 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"page\":14,\"sort_by_price\":\"at\",\"sort_by_created_at\":\"laborum\"}"
+                        },
                         "description": ""
                     },
                     "response": [
@@ -208,7 +223,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"naeejhuogumhosyalvr\",\"description\":\"A perspiciatis numquam saepe.\",\"photos\":[\"nam\"]}"
+                            "raw": "{\"name\":\"ulfrcpozmkkbghs\",\"description\":\"Esse veniam et occaecati mollitia architecto.\",\"photos\":[\"ut\"],\"price\":\"ducimus\"}"
                         },
                         "description": ""
                     },
@@ -220,13 +235,20 @@
                         "url": {
                             "host": "{{baseUrl}}",
                             "path": "api\/v1\/abs\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/abs\/:id",
+                            "query": [
+                                {
+                                    "key": "fields[0]",
+                                    "value": "dolorum",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/abs\/:id?fields[0]=dolorum",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "2",
+                                    "value": "1",
                                     "description": "The ID of the ab."
                                 }
                             ]
@@ -242,7 +264,10 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
                         "description": ""
                     },
                     "response": [
@@ -283,7 +308,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "2",
+                                    "value": "1",
                                     "description": "The ID of the ab."
                                 }
                             ]
@@ -316,7 +341,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "2",
+                                    "value": "1",
                                     "description": "The ID of the ab."
                                 }
                             ]
