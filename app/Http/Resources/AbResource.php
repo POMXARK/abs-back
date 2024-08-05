@@ -27,10 +27,10 @@ class AbResource extends JsonResource
     {
         /** @var Ab $this */
         $data = [
-            'abId' => $this->id,
+            'id' => $this->id,
             'name' => $this->name,
             'price' => $this->price,
-            'photoLink' => $this->photos()->first(),
+            'photoLink' => $this->photos()->first()['link'],
         ];
 
         self::optionalFields($data);
@@ -57,8 +57,8 @@ class AbResource extends JsonResource
         $res = [];
         foreach ($photos as $photo) {
             $data = [];
-            $data['photoId'] = $photo['id'];
-            $data['photoLink'] = $photo['link'];
+            $data['id'] = $photo['id'];
+            $data['link'] = $photo['link'];
             $data['createdAt'] = $photo['created_at'];
             $res[] = $data;
         }

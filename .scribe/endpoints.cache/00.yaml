@@ -42,7 +42,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5bg8hDaeZVkva16cdf3EP64'
+      - 'Bearer edE8D4g61aVbZhk6aPcf5v3'
     controller: null
     method: null
     route: null
@@ -72,7 +72,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: inventore
+        example: optio
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -81,7 +81,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: rabernathy@example.com
+        example: lockman.edyth@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -90,7 +90,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'y4![Im/BU*!0'
+        example: 'V!m;B{G@-k]2'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -105,9 +105,9 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: inventore
-      email: rabernathy@example.com
-      password: 'y4![Im/BU*!0'
+      name: optio
+      email: lockman.edyth@example.net
+      password: 'V!m;B{G@-k]2'
       password_confirmation: null
     fileParameters: []
     responses: []
@@ -142,7 +142,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: corrine.stokes@example.net
+        example: blair92@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -151,14 +151,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'v#IhMq_Ax+t$NZ!,'
+        example: 'fJ{yFzY'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: corrine.stokes@example.net
-      password: 'v#IhMq_Ax+t$NZ!,'
+      email: blair92@example.org
+      password: 'fJ{yFzY'
     fileParameters: []
     responses: []
     responseFields: []
@@ -223,7 +223,7 @@ endpoints:
         name: page
         description: ''
         required: false
-        example: 14
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -232,7 +232,7 @@ endpoints:
         name: sort_by_price
         description: ''
         required: false
-        example: at
+        example: inventore
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -241,20 +241,20 @@ endpoints:
         name: sort_by_created_at
         description: ''
         required: false
-        example: laborum
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      page: 14
-      sort_by_price: at
-      sort_by_created_at: laborum
+      page: 20
+      sort_by_price: inventore
+      sort_by_created_at: et
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
+        status: 200
+        content: '{"abs":{"data":[],"meta":{"current_page":20,"first_page_url":"http:\/\/127.0.0.1\/api\/v1\/abs?page=1","from":null,"last_page":11,"last_page_url":"http:\/\/127.0.0.1\/api\/v1\/abs?page=11","next_page_url":null,"path":"http:\/\/127.0.0.1\/api\/v1\/abs","per_page":10,"prev_page_url":"http:\/\/127.0.0.1\/api\/v1\/abs?page=19","to":null,"total":106}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -266,7 +266,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Eh6ba1D43dcfP5e6kvga8VZ'
+      - 'Bearer vk61bahe5a4cdEDVP3Z68fg'
     controller: null
     method: null
     route: null
@@ -297,7 +297,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 200 characters.'
         required: true
-        example: ulfrcpozmkkbghs
+        example: urpfu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -306,7 +306,7 @@ endpoints:
         name: description
         description: 'Must not be greater than 1000 characters.'
         required: true
-        example: 'Esse veniam et occaecati mollitia architecto.'
+        example: 'Et omnis perspiciatis vel ipsum aut inventore molestiae.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -316,7 +316,7 @@ endpoints:
         description: ''
         required: true
         example:
-          - ut
+          - mollitia
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
@@ -325,24 +325,24 @@ endpoints:
         name: price
         description: ''
         required: true
-        example: ducimus
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: ulfrcpozmkkbghs
-      description: 'Esse veniam et occaecati mollitia architecto.'
+      name: urpfu
+      description: 'Et omnis perspiciatis vel ipsum aut inventore molestiae.'
       photos:
-        - ut
-      price: ducimus
+        - mollitia
+      price: quia
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer D4hg3Pc6a51aVbedf68EkvZ'
+      - 'Bearer hfDavd4c6k1ZPabVe53E8g6'
     controller: null
     method: null
     route: null
@@ -382,14 +382,14 @@ endpoints:
         description: ''
         required: true
         example:
-          - dolorum
+          - quia
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
       fields:
-        - dolorum
+        - quia
     bodyParameters:
       fields:
         name: fields
@@ -404,8 +404,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
+        status: 200
+        content: '{"ab":{"abId":1,"name":"johkvmpxr","price":"1234.00","photoLink":{"id":1,"ab_id":1,"link":"1","created_at":"2024-07-29T05:17:25.000000Z","updated_at":"2024-07-29T05:17:25.000000Z"}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -417,7 +417,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3V66dZEef1b4D5Pcvakag8h'
+      - 'Bearer vb8agZf1Dh54adPk3e6cVE6'
     controller: null
     method: null
     route: null
@@ -462,7 +462,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8Vga561cPhbEZfvD4d36aek'
+      - 'Bearer 16cfkegEDaah85Vb4v36PdZ'
     controller: null
     method: null
     route: null
@@ -506,7 +506,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vkPVf6cg8Dba1E5adZ36he4'
+      - 'Bearer 8c4dhfEavZDk3bP6e6g1a5V'
     controller: null
     method: null
     route: null

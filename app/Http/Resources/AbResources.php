@@ -27,7 +27,7 @@ class AbResources extends JsonResource
 
         /** @var Ab $this */
         return [
-            'abId' => $this->id,
+            'id' => $this->id,
             'name' => $this->name,
             'price' => $this->price,
             'photoLink' => $photoLink,

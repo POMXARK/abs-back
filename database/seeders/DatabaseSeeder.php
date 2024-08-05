@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Ab;
+use App\Models\Photo;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,11 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        Ab::factory(100)->create();
+        Photo::factory()
+            ->sequence(fn() => [
+                'ab_id' => Ab::all()->random(),
+            ])
+            ->count(300)->create();
     }
 }

@@ -32,12 +32,12 @@ class AbRepository implements AbRepositoryInterface
     private function orderByField(&$query, array $fields, string $name): void
     {
         if (array_key_exists($name, $fields)) {
-            if ($fields[$name] == 'asc') {
-                $query = $query->orderBy('price');
-            }
-            if ($fields[$name] == 'desc') {
-                $query = $query->orderBy('price', 'desc');
-            }
+                if($name == 'sort_by_price') {
+                    $query = $query->orderBy('price', $fields[$name]);
+                }
+                if($name == 'sort_by_created_at') {
+                    $query = $query->orderBy('created_at', $fields[$name]);
+                }
         }
     }
 

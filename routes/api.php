@@ -13,7 +13,7 @@ Route::prefix('/v1')->group(function () {
     Route::post('/register', [AuthController::class, 'register'])->name('register');
     Route::post('/login', [AuthController::class, 'login'])->name('login');
 
-    Route::middleware('auth:sanctum')->name('api.v1.')->group(function () {
+    Route::name('api.v1.')->group(function () {
         Route::apiResource('abs', AbController::class);
     });
 });
